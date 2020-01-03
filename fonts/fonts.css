@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("ProximaNova/ProximaNova-Regular.eot");
+    src: url("ProximaNova/ProximaNova-Regular.woff"),
+         url("ProximaNova/ProximaNova-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("ProximaNova/ProximaNova-Bold.eot");
+    src: url("ProximaNova/ProximaNova-Bold.woff"),
+         url("ProximaNova/ProximaNova-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Th';
+    src: url("ProximaNova/ProximaNova-Light.eot");
+    src: url("ProximaNova/ProximaNova-Light.woff"),
+         url("ProximaNova/ProximaNova-Light.ttf");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url("BebasNeueBold/BebasNeueBold.eot");
+    src: url("BebasNeueBold/BebasNeueBold.woff"),
+         url("BebasNeueBold/BebasNeueBold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Prata';
+    src: url('Prata/Prata-Regular.eot');
+    src: url('Prata/Prata-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Prata/Prata-Regular.woff2') format('woff2'),
+        url('Prata/Prata-Regular.woff') format('woff'),
+        url('Prata/Prata-Regular.ttf') format('truetype'),
+        url('Prata/Prata-Regular.svg#Prata-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

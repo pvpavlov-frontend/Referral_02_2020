@@ -1,0 +1,2405 @@
+@import 'reset'
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap')
+
+$colormain: #736074
+$text1: #111
+$text2: #222
+$text3: #333
+
+
+@mixin object($width, $height, $bg)
+	width: $width
+	height: $height
+	background: $bg
+@mixin transPos($top, $right, $bottom, $left,$transX,$transY)
+	position: absolute
+	top: $top
+	left: $left
+	right: $right
+	bottom: $bottom
+	transform: translate($transX, $transY)
+@mixin center
+	display: flex
+	justify-content: center
+	align-items: center
+  
+.colormain 
+  color: $colormain
+html
+  scroll-behavior: smooth 
+.body
+  background: #fff
+.container
+  max-width: 1270px
+  margin: 0 auto
+  padding: 0 15px
+.masking
+  width: 300px
+  height: 80px
+  border-radius: 0
+  overflow: hidden
+  background: #000
+  .ring
+    width: 0
+    height: 0
+    background: #fff
+    border-radius: 50%
+    animation: fill_in .5s linear reverse
+    @keyframes fill_in
+      0%
+        background: #fff
+        border-radius: 50%
+        width: 0px
+        height: 0px
+      100%
+        width: 350px
+        height: 350px
+        margin-left: -25px
+        margin-right: -25px
+        border-radius: 50%
+        background: #000     
+
+.default-btn
+  border: 0
+  color: #fff
+  text-transform: uppercase
+  cursor: pointer
+  font-family: "Proxima Nova", sans-serif
+  font-size: 20px
+  outline: none
+  margin: 0 auto
+  position: relative
+  z-index: 0
+  letter-spacing: 0px
+  position: relative
+  width: 300px
+  height: 80px
+  border-radius: 0px
+  overflow: hidden
+  color: #fff
+  display: flex
+  justify-content: center
+  align-items: center
+  @media screen and (max-width: 767px)  
+    width: 280px
+    height: 60px
+  .go
+    position: absolute
+    width: 100%
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    text-align: center
+    animation: color_in 1s linear normal
+    color: #fff
+    @media screen and (max-width: 767px)  
+      letter-spacing: 1px
+		@keyframes color_in 
+			0% 
+				color: #000
+			100% 
+				color: #fff
+  &:hover
+    .go
+      animation: color_out 1s linear normal
+      color: #000
+  		@keyframes color_out 
+  			0% 
+				  color: #fff 
+  			100% 
+  				color: #000
+    .ring
+      background: #fff
+      width: 350px
+      height: 350px
+      margin-left: -25px
+      margin-right: -25px
+      border-radius: 50%
+      animation: fill_out .5s linear normal
+  		@keyframes fill_out
+        0%
+          background: #000
+          border-radius: 50%
+          width: 0px
+          height: 0px
+        100%
+          width: 350px
+          height: 350px
+          margin-left: -25px
+          margin-right: -25px
+          border-radius: 50%
+          background: #fff
+
+  @media screen and (max-width: 767px)
+    font-size: 16px
+    line-height: 24px
+    width: 282px
+    height: 70px
+  @media screen and (max-width: 370px)
+    width: 282px
+  img
+    margin-left: 25px
+    @media screen and (max-width: 767px)  
+      margin-left: 40px
+  &-trans
+    background: transparent
+    box-shadow: none
+    border: 1px solid #ffffff
+    height: 61px
+    color: #fff
+    font-family: Open Sans, sans-serif
+    letter-spacing: 0
+    font-size: 20px
+    line-height: 27px
+    text-transform: uppercase
+    width: 200px
+    height: 60px
+    &:focus
+      border: 1px solid $text1 !important
+    &:hover::before
+      background: #FFEFCE
+    @media screen and (max-width: 991px)
+      width: 200px
+      height: 60px
+    @media screen and (max-width: 767px)
+      width: 280px
+      height: 50px  
+      font-size: 18px
+      line-height: 25px
+
+
+.bold
+  font-family: "Proxima Nova", sans-serif
+  font-weight: bold
+.nowrap_space
+  white-space: nowrap
+
+//section main
+.main
+  position: relative
+  .wrap-parallax
+    position: absolute
+    z-index: 4
+    top: 0
+    left: 43.3%
+    @media screen and (max-width: 1365px)
+      top: 25px
+      left: 42.3%
+    @media screen and (max-width: 991px)
+      display: none
+    img
+      @media screen and (max-width: 1365px)
+        width: 382px
+        height: 719px
+  &-container
+    display: flex
+    flex-wrap: wrap
+    max-width: 1560px
+    padding: 42px 15px 42px
+    margin: 0 auto
+    flex-wrap: wrap
+    @media screen and (max-width: 1365px)
+      padding: 55px 15px 42px
+      max-width: 1245px
+    @media screen and (max-width: 991px)
+      max-width: 991px
+      background: none
+      padding: 0
+
+  &-img
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: auto
+  &-section
+    background-color: #fff
+    position: relative
+    z-index: 2
+    @media screen and (max-width: 991px)
+      overflow: hidden
+    // @media screen and (max-width: 1199px)
+    //     overflow: hidden
+    &__rules
+      a
+        font-family: "Proxima Nova", sans-serif
+        font-weight: bold
+        font-size: 22px
+        line-height: 34px
+        letter-spacing: 1.7px
+        color: $text1
+        text-transform: none
+        margin-top: 27px
+        display: inline-block
+        text-decoration: none
+        @media screen and (max-width: 1365px)
+          letter-spacing: 1px
+          font-size: 24px
+          margin-top: 25px
+        @media screen and (max-width: 991px)
+          margin-top: 30px
+          margin-left: 57px
+        @media screen and (max-width: 767px)
+          font-size: 15px
+          letter-spacing: 0
+          margin-top: 11px
+          margin-left: 16px
+          text-align: left
+        &:hover
+          text-decoration-line: underline
+        img
+          margin-left: 10px
+          // @media screen and (max-width: 767px)
+          //   margin-left: 5px
+          //   width: 13px        
+  &-left
+    flex: 0 0 47.2%
+    max-width: 47.2%
+    background: url(../img/bg-header-left.jpg) top center no-repeat
+    background-size: cover
+    text-align: center
+    padding: 90px 15px 66px
+    display: flex
+    justify-content: center
+    @media screen and (max-width: 1365px)
+      padding: 45px 15px 61px
+    @media screen and (max-width: 991px)
+      flex: 0 0 100%
+      max-width: 100%
+      padding: 89px 70px 73px
+      margin-bottom: 0px
+      justify-content: flex-start
+    @media screen and (max-width: 767px)
+      padding: 13px 0px 21px 150px
+      margin-bottom: 0px
+    @media screen and (max-width: 500px)
+      padding: 13px 20px 21px 20px
+    &-shell
+      position: relative
+      display: flex
+      flex-direction: column
+      align-items: center
+      // @media screen and (max-width: 1199px)
+      //   flex: 0 0 100%
+      //   max-width: 100%      
+    &-data
+      position: relative
+      z-index: 3
+      text-transform: uppercase
+      text-align: center
+      @media screen and (max-width: 1365px)
+        margin-left: 9px
+      @media screen and (max-width: 991px)
+        text-align: left
+        padding-bottom: 27px
+        margin-left: 0px
+      // @media screen and (max-width: 767px)
+      //   padding-bottom: 15px
+    &__excerpt
+      color: $text1
+      text-align: center
+      font-family: "Proxima Nova", sans-serif
+      font-size: 30px
+      line-height: 54px
+      text-transform: uppercase
+      letter-spacing: 1px
+      @media screen and (max-width: 1365px)
+        font-weight: normal
+        font-size: 20px
+        line-height: 54px
+        letter-spacing: 0.8px
+        text-transform: uppercase
+        color: $text2
+      @media screen and (max-width: 991px)
+        font-size: 30px
+        line-height: 54px
+        text-align: left
+        letter-spacing: 1.2px
+      @media screen and (max-width: 767px)
+        font-size: 16px
+        line-height: 54px
+        letter-spacing: 0.7px
+    &__title
+      color: $text2
+      font-size: 60px
+      line-height: 60px
+      margin: 24px 0 -9px
+      @media screen and (max-width: 1365px)
+        font-size: 50px
+        line-height: 65px
+        margin: 2px 0 -20px
+      @media screen and (max-width: 991px)
+        max-width: 640px
+        font-size: 60px
+        line-height: 78px
+        margin-top: 14px
+        margin-bottom: -19px
+      @media screen and (max-width: 767px)
+        font-size: 30px
+        line-height: 39px
+        margin-top: 6px
+        margin-bottom: -21px
+      span
+        display: block
+        // @media screen and (max-width: 991px)
+        //   display: inline    
+    &__text
+      color: $text2
+      font-family: "Proxima Nova", sans-serif
+      font-size: 38px
+      line-height: 1em
+      letter-spacing: 1px
+      word-spacing: 3px
+      text-transform: uppercase
+      @media screen and (max-width: 1365px)
+        font-size: 30px
+        letter-spacing: 0
+        word-spacing: 0
+      @media screen and (max-width: 991px)
+        font-size: 40px
+        line-height: 1em
+      @media screen and (max-width: 767px)
+        font-size: 20px
+        line-height: 1em
+      span
+        br
+          display: none
+        // @media screen and (max-width: 991px)
+        //   display: block
+        // @media screen and (max-width: 767px)
+        //   display: block
+      &_bold
+        font-family: "Proxima Nova", sans-serif
+        font-weight: bold
+        font-size: 90px
+        line-height: 117px
+        color: $colormain
+        letter-spacing: 1px
+        padding: 16px 0 4px       
+        @media screen and (max-width: 1365px)
+          font-size: 70px
+          line-height: 91px
+          padding: 9px 0 8px 
+        @media screen and (max-width: 991px)
+          font-size: 90px
+          line-height: 117px
+          padding: 50px 0 13px     
+        @media screen and (max-width: 767px)
+          padding: 21px 0 22px 
+          font-size: 50px
+          line-height: 1em
+        span
+          vertical-align: bottom
+          line-height: 77px
+          font-size: 70px
+          @media screen and (max-width: 1365px)
+            font-size: 50px
+            line-height: 60px
+          @media screen and (max-width: 991px)
+            line-height: 77px
+            font-size: 70px
+          @media screen and (max-width: 767px)
+            line-height: 24px
+            font-size: 20px
+    &__subtext
+      font-family: "Proxima Nova", sans-serif
+      font-style: normal
+      font-size: 25px
+      line-height: 36px
+      letter-spacing: 0.5px
+      text-transform: none
+      color: $colormain
+      margin-top: -13px
+      @media screen and (max-width: 1365px)
+        font-weight: 800
+        font-size: 24px
+        line-height: 40px
+        letter-spacing: 1.3px
+        text-transform: uppercase
+        color: $colormain
+      @media screen and (max-width: 991px)
+        max-width: 335px
+        font-size: 30px
+        line-height: 40px
+      @media screen and (max-width: 767px)
+        font-size: 18px
+        line-height: 22px
+        max-width: 260px
+      br
+        display: none
+        @media screen and (max-width: 767px)
+          display: block      
+      span
+        font-size: 40px 
+        font-family: "Proxima Nova", sans-serif
+        font-weight: bold
+        display: block  
+        text-transform: uppercase
+        @media screen and (max-width: 1365px)
+          display: inline-block
+          font-weight: 800
+          font-size: 24px
+          line-height: 40px
+          letter-spacing: 0.8px
+          text-transform: uppercase
+          color: $colormain
+        @media screen and (max-width: 991px)
+          font-size: 30px
+          letter-spacing: 1.8px 
+    .default-btn
+      margin-top: 37px
+      @media screen and (max-width: 991px)
+        margin-left: 0
+        margin-top: 91px
+      @media screen and (max-width: 767px)
+        margin-top: 14px
+        width: 160px
+        height: 50px
+        font-size: 14px
+        line-height: 24px
+
+      // @media screen and (max-width: 1199px)
+      //   font-size: 18px
+      // @media screen and (max-width: 991px)
+      //   height: 84px
+      //   font-size: 20px
+      //   margin-top: 43px
+      //   margin-left: auto
+      // @media screen and (max-width: 767px)
+      //   height: 70px
+      //   font-size: 16px
+      //   margin-top: 28px
+      //   width: 282px       
+    
+  &-right
+    flex: 0 0 52.8%
+    max-width: 52.8%
+    background: $colormain url('../img/bg-header-right.jpg') top right no-repeat
+    background-size: cover
+    position: relative
+    @media screen and (max-width: 991px)
+      flex: 0 0 100%
+      max-width: 100%
+      background: $colormain
+      height: 159px
+    @media screen and (max-width: 767px)
+      height: 114px
+    &::before
+      content: ''
+      width: 380px
+      height: 533px
+      position: absolute
+      bottom: 0
+      left: -117px
+      background: url('../img/smear.png') top center no-repeat
+      background-size: cover
+      @media screen and (max-width: 1365px)
+        width: 317px
+        height: 400px
+        left: -83px
+      @media screen and (max-width: 991px)
+        background: url('../img/smear-tab.png') top center no-repeat
+        width: 404px
+        height: 510px
+        left: auto
+        right: -3px
+        bottom: 0
+      @media screen and (max-width: 767px)
+        background: url('../img/smear-mob.png') top center no-repeat
+        width: 179px
+        height: 270px
+        left: auto
+        right: 10%
+        bottom: 0
+        background-size: contain
+        @media screen and (max-width: 500px)
+          right: 0
+    .display-mob
+      display: none
+      @media screen and (max-width: 991px)
+        display: block
+        width: 216px
+        height: 700px
+        position: absolute
+        bottom: 1px
+        right: 66px
+      @media screen and (max-width: 767px)
+        width: 124px
+        height: 409px
+        bottom: 0
+        right: 10%
+      @media screen and (max-width: 500px)
+        right: 0
+    .logo
+      position: absolute
+      right: 26px
+      top: 35%
+      @media screen and (max-width: 991px)
+        display: none
+//section steps
+.steps
+  &-section
+    background: #fff
+    padding: 85px 15px 100px
+    @media screen and (max-width: 1670px)
+      padding: 85px 15px 80px
+    @media only screen and (max-width: 991px)
+      padding: 74px 15px 63px
+    @media only screen and (max-width: 767px)
+      padding: 44px 10px 0
+    &__h2
+      font-weight: 600
+      font-size: 40px
+      line-height: 50px
+      text-align: center
+      letter-spacing: 0.05em
+      text-transform: uppercase
+      color: $text1
+      margin-bottom: 85px
+      @media only screen and (max-width: 991px)
+        margin-bottom: 35px
+      @media only screen and (max-width: 767px)
+        font-size: 20px
+        line-height: 30px
+        letter-spacing: 0
+        margin-bottom: 13px
+    &__title
+      color: #3B2F28
+      text-align: center
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 30px
+      @media only screen and (max-width: 767px)
+        font-size: 22px
+    &__rules
+      margin-top: 6px
+      text-align: center
+      font-size: 17px
+      line-height: 33px
+      @media only screen and (max-width: 767px)
+        margin-top: 0
+        font-size: 20px
+        line-height: 40px
+        padding-bottom: 38px
+      a
+        font-family: "Proxima Nova", sans-serif
+        font-weight: bold
+        font-size: 22px
+        line-height: 40px
+        letter-spacing: 0.8px
+        color: $text1
+        text-transform: none
+        margin-top: 27px
+        display: inline-block
+        text-decoration: none
+        margin-top: 30px
+        color: $text1
+        text-decoration: underline
+        font-size: 24px
+        line-height: 40px 
+        @media only screen and (max-width: 767px)
+          margin-top: 20px
+          letter-spacing: 0px
+          font-size: 20px !important
+          line-height: 40px !important
+        img
+          margin-left: 10px        
+        &:hover
+          text-decoration: none
+    &__btn
+      text-align: center
+      margin-top: 115px
+      @media only screen and (max-width: 991px)
+        margin-top: -60px
+      @media only screen and (max-width: 767px)
+        margin-top: 0
+        padding-top: 35px
+      .default-btn
+        width: 340px
+        @media only screen and (max-width: 767px)
+          width: 280px
+          height: 60px        
+    &__wrapper
+      max-width: 1422px
+      padding-left: 15px
+      padding-right: 15px
+      margin-left: auto
+      margin-right: auto
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      @media only screen and (max-width: 1199px)
+        display: block
+      @media only screen and (max-width: 370px)
+        padding-left: 0
+        padding-right: 0     
+    button
+      margin: auto
+    .steps-item
+      width: 33%
+      color: #fff
+      -webkit-box-flex: 0
+      position: relative
+      padding: 0 15px
+      @media only screen and (max-width: 1199px)
+        margin: 0 auto 80px
+        flex: 0 0 40%
+        width: 100%
+        max-width: 40%
+      @media only screen and (max-width: 991px)
+        margin: 0 auto 122px
+        flex: 0 0 54%
+        max-width: 435px
+      @media only screen and (max-width: 767px)
+        margin-bottom: 41px
+        flex: 0 0 260px
+        max-width: 260px
+        padding: 0
+      &:nth-child(3)
+       @media only screen and (max-width: 991px)
+        max-width: 435px
+        padding-right: 18px
+       @media only screen and (max-width: 767px)
+        max-width: 280px
+        padding-right: 10px
+              
+      &__title
+        color: $text1
+        font-weight: 700
+        font-size: 23px
+        line-height: 29px
+        padding-top: 18px
+        padding-bottom: 18px
+        text-transform: uppercase
+        display: flex
+        position: relative
+        @media only screen and (max-width: 991px)
+          padding-top: 37px
+          padding-left: 18px
+          padding-bottom: 22px
+          letter-spacing: 1px  
+        @media only screen and (max-width: 767px)
+          flex-wrap: wrap
+          padding-bottom: 0
+          font-size: 16px
+          padding-top: 23px
+          padding-left: 8px
+          padding-bottom: 0
+          letter-spacing: 0px
+        span
+          @media only screen and (max-width: 1199px)
+            display: inline-block
+            margin-left: 40px
+          @media only screen and (max-width: 991px)
+            margin-left: 30px
+
+      &__icon
+        width: 38px
+        position: relative
+        @media only screen and (min-width: 992px)
+          margin-right: 56px
+          margin-top: 9px
+          margin-left: -21px
+        @media only screen and (max-width: 1199px)
+          margin-right: 23px
+        @media only screen and (max-width: 991px)
+          margin-right: 0
+          width: 40px
+          height: 40px
+          left: -23px
+          top: 6px
+        @media only screen and (max-width: 767px)
+          left: 5px
+          top: 37px
+        img
+          @media only screen and (max-width: 991px)
+            width: 100%
+            height: auto      
+      &__text
+        color: $text1
+        font-size: 15px
+        font-family: "Proxima Nova", sans-serif
+        padding-left: 81px
+        line-height: 28px
+        position: relative
+        @media only screen and (max-width: 1199px)
+          font-size: 14px
+          line-height: 26px
+        @media only screen and (max-width: 991px)
+          font-size: 18px
+          line-height: 32px
+          padding-left: 88px
+        @media only screen and (max-width: 767px)
+          font-size: 16px
+          line-height: 25px
+          flex: 0 0 100%
+          max-width: 100%
+          margin-top: -9px
+          text-align: left
+          padding-left: 77px
+          letter-spacing: -1px
+        br
+         @media only screen and (max-width: 767px)
+           display: none
+        a
+          color: $text1
+          text-decoration: underline
+      &:first-child
+        .steps-item__text
+          br
+            display: block                  
+      &:last-child
+        .steps-item__text
+          br
+            @media only screen and (max-width: 991px)
+              display: none                          
+        a
+          color: $colormain
+          text-decoration: underline
+      &__number
+        position: absolute
+        left: 5px
+        top: -49px
+        font-family: "BebasNeue", sans-serif
+        font-size: 300px
+        line-height: 300px
+        font-weight: bold
+        color: #F7E5E3
+        @media only screen and (max-width: 1199px)
+          font-size: 200px
+          line-height: 1em
+          top: -33px
+        @media only screen and (max-width: 991px)
+          font-size: 300px
+          line-height: 1em
+        @media only screen and (max-width: 767px)
+          font-size: 150px
+          line-height: 1em
+          left: -3px
+          top: 0                      
+   
+  
+//section video
+.video
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    bottom: 100%
+    top: 0
+    right: auto
+    left: 50%
+    transform: translate(-50%, 0)
+    max-width: 1530px
+    width: 100%
+    height: 725px
+    z-index: -1
+    background: #FFF6F5
+    @media screen and (max-width: 1670px)
+      height: 690px
+    @media screen and (max-width: 991px)
+      height: 600px
+    @media screen and (max-width: 767px)
+      height: 365px
+  &__viewport
+    max-width: 1080px
+    margin: 0 auto
+    @media screen and (max-width: 1670px)
+      max-width: 920px
+    @media screen and (max-width: 1365px)
+      padding: 0 0 35px
+    @media screen and (max-width: 991px)
+      max-width: 770px
+      padding: 0 25px 35px
+    @media screen and (max-width: 767px)
+      padding: 0 20px 35px
+    @media screen and (max-width: 500px)
+      max-width: 100%
+  &-container
+    @media screen and (min-width: 1400px)
+      max-width: 1530px
+      min-width: 100%
+      padding: 0  
+    @media screen and (max-width: 1670px)
+      max-width: 1245px
+    @media screen and (max-width: 991px)
+      max-width: 100%
+      padding: 0
+    .video
+      &__title
+        font-family: "Proxima Nova", sans-serif
+        font-weight: bold
+        padding-top: 70px
+        padding-bottom: 15px
+        color: $text1
+        font-size: 50px
+        line-height: 60px
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        text-align: center
+        @media screen and (max-width: 1670px)
+          padding-top: 84px
+        // @media screen and (max-width: 1199px)
+        //   padding-top: 25px
+        //   padding-bottom: 45px
+        @media screen and (max-width: 991px)
+          max-width: 570px
+          margin: 0 auto
+          padding-top: 73px
+          padding-bottom: 12px
+        @media screen and (max-width: 767px)
+          font-size: 20px
+          line-height: 24px
+          max-width: 260px
+          margin: auto
+          padding-left: 15px
+          padding-right: 15px
+          padding-top: 48px
+          padding-bottom: 17px
+      &__subtitle
+        font-family: "Proxima Nova", sans-serif
+        font-size: 30px
+        line-height: 39px
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        text-align: center
+        display: block
+        color: $text3
+        padding-bottom: 63px
+        @media screen and (max-width: 1199px)
+          margin: 15px 0 25px
+        @media screen and (max-width: 991px)
+          max-width: 555px
+          margin: 0px auto
+          padding-bottom: 49px
+        @media screen and (max-width: 767px)
+          font-size: 18px
+          line-height: 23px
+          margin: 0px auto
+          padding-bottom: 37px
+        br
+          display: none
+          @media screen and (max-width: 767px)
+            display: block     
+      .cover_video
+        width: 1080px
+        max-height: 606px
+        background: #C4C4C4
+        background-size: cover
+        position: relative
+        display: block
+        cursor: pointer
+        overflow: hidden
+        border-radius: 0
+        background: url('../img/video_cover.jpg') center center no-repeat
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2)
+        @media screen and (max-width: 1670px)
+          max-width: 920px
+          background-size: cover
+        @media screen and (max-width: 991px)
+          max-width: 720px
+          max-height: inherit
+          width: 100%
+        @media screen and (max-width: 767px)
+          border-radius: 0
+          max-height: 350px
+        @media screen and (max-width: 580px)
+          max-height: 340px
+        @media screen and (max-width: 500px)
+          max-height: 280px
+        @media screen and (max-width: 400px)
+          max-height: 160px
+        &::before
+          content: ''
+          display: block
+          padding-top: 56.25%
+        .play
+          width: 109px
+          height: 109px
+          display: block
+          position: absolute
+          top: 50%
+          left: 50%
+          background: url('../img/play.svg') center center no-repeat
+          background-size: contain
+          transform: translate(-50%, -50%)
+          transition: all .3s ease-in-out
+          @media screen and (max-width: 991px)
+            width: 80px
+            height: 80px
+          @media screen and (max-width: 767px)
+            width: 31px
+            height: 31px
+          &:hover
+            -webkit-opacity: .5
+            -moz-opacity: .5
+            opacity: .5
+      .embed-responsive
+        border-radius: 17px
+        max-height: 738px
+        @media screen and (max-width: 991px)
+          max-height: 400px
+        @media screen and (max-width: 767px)
+          border-radius: 0
+          max-height: 350px
+        @media screen and (max-width: 580px)
+          max-height: 340px
+        @media screen and (max-width: 500px)
+          max-height: 280px
+        @media screen and (max-width: 400px)
+          max-height: 160px
+      .embed-responsive-16by9
+        border-radius: 0
+        &:before
+          padding-top: 0
+        &.active:before
+          padding-top: 56.25%
+       
+//extreme
+.extreme
+  &-section
+    background: url('../img/bg-extreme.jpg') no-repeat
+    background-position: top center
+    background-size: cover
+    position: relative
+    padding-top: 2px
+    padding-bottom: 139px
+    margin-top: 345px
+    @media screen and (max-width: 1670px)
+      margin-top: 225px
+      padding-bottom: 183px
+      padding-top: 32px
+    @media screen and (max-width: 1365px)
+      margin-top: 228px
+      padding-bottom: 109px
+    @media screen and (max-width: 991px)
+      margin-top: 188px
+      padding-top: 38px
+    @media screen and (max-width: 767px)
+      margin-top: 100px
+      padding-top: 14px
+      padding-bottom: 9px
+    &::before
+      content: ''
+      position: absolute
+      top: -235px
+      left: 0
+      right: 0
+      width: 100%
+      height: 241px
+      z-index: 2
+      background: url(../img/bg-extreme-top.jpg) no-repeat
+      background-position: bottom center
+      background-size: 100% auto
+      @media screen and (max-width: 1365px)
+        background-size: cover
+      @media screen and (max-width: 991px)
+        top: -188px
+        height: 188px
+      @media screen and (max-width: 767px)
+        top: -100px
+        height: 100px
+  &-container
+    max-width: 1608px
+    margin: 0 auto
+    @media screen and (max-width: 1365px)
+      max-width: 688px
+  &__title
+    font-weight: bold
+    font-size: 70px
+    line-height: 85px
+    display: flex
+    align-items: center
+    justify-content: center
+    letter-spacing: 0.05em
+    text-transform: uppercase
+    color: $text1
+    text-align: center
+    @media screen and (max-width: 1670px)
+      font-size: 60px
+      line-height: 73px
+    @media screen and (max-width: 991px)
+      font-size: 40px
+      line-height: 49px
+    @media screen and (max-width: 767px)
+      font-size: 30px
+      line-height: 37px
+  &-top
+    display: flex
+    @media screen and (max-width: 1670px)
+      max-width: 1214px
+      margin: 0 auto
+    @media screen and (max-width: 1365px)
+      justify-content: center
+      max-width: 590px
+      flex-wrap: wrap
+    &__left
+      position: relative
+      width: 530px
+      flex: 0 0 530px
+      transform: translate(152px, 102px)
+      @media screen and (max-width: 1670px)
+        transform: translate(0px, 126px)
+      @media screen and (max-width: 1365px)
+        transform: translate(0px, 0px)
+        flex: 0 0 100%
+
+
+      .top-text
+        font-weight: 600
+        font-size: 40px
+        line-height: 52px
+        display: flex
+        align-items: center
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        color: $text1
+        @media screen and (max-width: 1670px)
+          display: none
+        @media screen and (max-width: 1365px)
+          display: block
+          font-size: 30px
+          line-height: 39px
+          max-width: 370px
+          text-align: center
+          margin: 37px auto
+        @media screen and (max-width: 767px)
+          font-size: 20px
+          line-height: 26px
+          max-width: 265px
+          text-align: center
+          margin: 14px auto 37px
+          letter-spacing: 1px
+      .art
+        // font-weight: 600
+        font-weight: 700
+        font-size: 30px
+        line-height: 37px
+        color: $text1
+        padding-top: 40px
+        @media screen and (max-width: 1670px)
+          display: none
+      .bottom-p
+        font-weight: 400
+        font-size: 24px
+        line-height: 40px
+        color: $text1
+        max-width: 380px
+        padding-top: 26px
+        @media screen and (max-width: 1670px)
+          font-size: 24px
+          line-height: 48px
+          padding-top: 22px
+        @media screen and (max-width: 1365px)
+          font-size: 18px
+          line-height: 36px
+          max-width: 100%
+          text-align: center
+          padding-top: 2px
+        @media screen and (max-width: 767px)
+          font-size: 14px
+          line-height: 22px
+          padding: 0 15px 
+        br
+          @media screen and (max-width: 1365px)
+            display: none
+
+      .price
+        @media screen and (max-width: 1365px)
+          position: absolute
+          right: -14px
+          bottom: -332px
+        @media screen and (max-width: 767px)
+          right: auto
+          left: auto
+          width: 100%
+          text-align: center
+          bottom: -690px
+        &-text
+          // font-weight: 600
+          font-weight: 700
+          font-size: 30px
+          line-height: 37px
+          color: $text3
+          padding-top: 72px
+          @media screen and (max-width: 1670px)
+            display: none
+          @media screen and (max-width: 1365px)
+            display: block
+            font-size: 20px
+            line-height: 24px
+            padding-top: 41px
+          @media screen and (max-width: 767px)
+            padding-top: 7px
+        &-num
+          // font-weight: 600
+          font-weight: 700
+          font-size: 80px
+          line-height: 97px
+          color: $text2
+          @media screen and (max-width: 1670px)
+            display: none
+          @media screen and (max-width: 1365px)
+            display: block
+            font-size: 60px
+            line-height: 73px
+          @media screen and (max-width: 767px)
+            font-size: 50px
+            line-height: 61px
+          span
+            font-size: 38px
+        &-art
+          display: none
+          @media screen and (max-width: 1365px)
+            display: block
+            font-weight: 700
+            font-size: 20px
+            line-height: 24px
+            color: $text1
+            padding-top: 0
+    &__center
+      flex: 0 0 600px
+      width: 600px
+      height: 1075px
+      top: 237px
+      left: -56px
+      position: relative
+      z-index: 5
+      @media screen and (max-width: 1670px)
+        width: 600px
+        height: 1008px
+        top: 154px
+        left: -223px
+      @media screen and (max-width: 1365px)
+        width: 429px
+        height: 720px
+        top: 0
+        left: 0
+        flex: 0 0 429px
+      @media screen and (max-width: 767px)
+        flex: 0 0 280px
+      &.active
+        ul
+          li
+            &:nth-child(2)
+              img
+                transform: translate(0, -188px)
+                transition-duration: 0.75s
+                @media screen and (max-width: 1365px)
+                  transform: translate(0, -138px)
+                @media screen and (max-width: 767px)
+                  // transform: translate(0, -88px)
+                  transform: translate(0, 0)
+          li
+            &:nth-child(3)
+              img
+                transform: translate(0, -148px)
+                transition-delay: 0.3s
+                transition-duration: 0.75s
+                @media screen and (max-width: 1365px)
+                  transform: translate(0, -98px)
+                @media screen and (max-width: 767px)
+                  // transform: translate(0, -48px)
+                  transform: translate(0, 0)
+      ul
+        position: absolute
+        width: 640px
+        height: 1075px
+        bottom: 0
+        z-index: 50
+        @media screen and (max-width: 1670px)
+          width: 600px
+          height: 1008px
+        @media screen and (max-width: 1365px)
+          width: 429px
+          height: 720px
+          width: 100%
+          position: relative
+        @media screen and (max-width: 767px)
+          width: 280px
+          height: 470px
+          display: block
+          margin: 0 auto
+          left: -21px
+        li
+          position: absolute !important
+          &:nth-child(1)
+            background: $colormain
+            border-radius: 50%
+            z-index: 1
+            width: 638px
+            height: 638px
+            top: 463px !important
+            left: 0 !important
+            @media screen and (max-width: 1670px)
+              width: 598px
+              height: 598px
+              top: 435px !important
+              left: 0px !important
+            @media screen and (max-width: 1365px)
+              width: 427px
+              height: 427px
+              top: 372px !important
+              left: 0 !important
+            @media screen and (max-width: 767px)
+              width: 280px
+              height: 280px
+              top: 260px !important
+              left: 20px !important
+          &:nth-child(2)
+            z-index: 2
+            left: 50px
+            left: 162px !important
+            top: 28px !important
+            @media screen and (max-width: 1670px)
+              width: 128px
+              height: 949px
+              left: 155px !important
+              top: 30px !important
+            @media screen and (max-width: 1365px)
+              width: 92px
+              height: 678px
+              left: 111px !important
+              top: 84px !important
+            @media screen and (max-width: 767px)
+              width: 60px
+              height: 443px
+              left: 93px !important
+              top: 70px !important
+            img
+              transition-duration: 0.75s
+              @media screen and (max-width: 1670px)
+                width: 100%
+                height: auto
+          &:nth-child(3)
+            z-index: 2
+            top: 58px !important
+            left: 299px !important
+            @media screen and (max-width: 1670px)
+              width: 180px
+              height: 980px
+              left: 283px !important
+              top: 56px !important
+            @media screen and (max-width: 1365px)
+              width: 128px
+              height: 700px
+              left: 204px !important
+              top: 105px !important
+            @media screen and (max-width: 767px)
+              width: 84px
+              height: 457px
+              left: 154px !important
+              top: 84px !important
+            img
+              transition-delay: 0.3s
+              transition-duration: 0.75s
+              @media screen and (max-width: 1670px)
+                width: 100%
+                height: auto
+          &:nth-child(4)
+            z-index: 4
+            top: 767px !important
+            left: -21px !important
+            @media screen and (max-width: 1670px)
+              width: 638px
+              top: 722px !important
+              left: -20px !important
+              height: auto
+            @media screen and (max-width: 1365px)
+              width: 455px
+              top: 578px !important
+              left: -13px !important
+            @media screen and (max-width: 767px)
+              width: 298px
+              top: 394px !important
+              left: 11px !important
+            img
+              @media screen and (max-width: 1670px)
+                width: 100%
+                height: auto
+    &__right
+      transform: translate(-260px, 0px)
+      @media screen and (max-width: 1670px)
+        transform: translate(-350px, 0px)
+        flex: 0 0 350px
+      @media screen and (max-width: 1365px)
+        display: none      
+      img
+        padding-top: 29px
+        @media screen and (max-width: 1670px)
+          display: none
+      .top-text-tab
+        padding-top: 138px
+        font-weight: 600
+        font-size: 40px
+        line-height: 60px
+        display: flex
+        align-items: center
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        color: $text1
+        display: none
+        @media screen and (max-width: 1670px)
+          display: block
+          letter-spacing: 2.5px
+      .art-tab
+        // font-weight: 600
+        font-weight: 700
+        font-size: 30px
+        line-height: 37px
+        color: $text1
+        padding-top: 40px
+        display: none        
+        @media screen and (max-width: 1670px)
+          display: block
+          padding-top: 54px
+      .price-tab
+        &-text
+          // font-weight: 600
+          font-weight: 700
+          font-size: 30px
+          line-height: 37px
+          color: $text3
+          padding-top: 72px
+          display: none
+          @media screen and (max-width: 1670px)
+            display: block
+            padding-top: 26px
+        &-num
+          // font-weight: 600
+          font-weight: 700
+          font-size: 80px
+          line-height: 97px
+          color: $text2
+          display: none
+          @media screen and (max-width: 1670px)
+            display: block
+          span
+            font-size: 38px        
+  &-bottom
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    @media screen and (max-width: 1670px)
+      max-width: 1214px
+      margin: 0 auto
+    @media screen and (max-width: 767px)
+      flex-wrap: wrap
+      margin-top: -25px 
+    .item-1,
+    .item-2,
+    .item-3
+      width: 33.3333%
+      @media screen and (max-width: 767px)
+        width: 100%
+    .wrap-img
+      position: relative
+      img
+        @media screen and (max-width: 1670px)
+          width: 100%
+    &-text
+      // font-weight: 600
+      font-weight: 700
+      font-size: 30px
+      line-height: 39px
+      letter-spacing: 0.5px
+      text-transform: uppercase
+      color: $text3
+      text-align: center
+      padding-top: 32px
+      width: 500px
+      @media screen and (max-width: 1670px)
+        padding-top: 22px
+        width: 395px
+      @media screen and (max-width: 1365px)
+        font-size: 20px
+        line-height: 26px
+        padding-top: 13px
+        width: 240px
+      @media screen and (max-width: 767px)
+        font-size: 20px
+        line-height: 26px
+        width: 100%
+        padding-bottom: 39px
+    .item-1
+      .wrap-img
+        padding-left: 79px
+        padding-top: 95px
+        @media screen and (max-width: 1670px)
+          padding: 62px 23px 0 6px
+        @media screen and (max-width: 1365px)
+          padding: 21px 7px 0 0px
+        @media screen and (max-width: 767px)
+          margin: 0
+          padding: 0
+        img
+          @media screen and (max-width: 1670px)
+            width: 107%
+          @media screen and (max-width: 767px)                 
+            width: 240px
+            margin: 0 auto
+            display: block
+    .item-2
+      .wrap-img
+        padding-left: 62px
+        padding-top: 350px
+        @media screen and (max-width: 1670px)
+          padding: 265px 0px 0 0px
+          margin-right: -12px
+          margin-left: 14px
+        @media screen and (max-width: 1365px)
+          padding: 216px 0px 0 0px
+          margin-right: -26px
+        @media screen and (max-width: 767px)
+          padding: 0
+          margin: 0
+        img
+          @media screen and (max-width: 767px)                 
+            width: 240px
+            margin: 0 auto
+            display: block
+    .item-3
+      .wrap-img
+        padding-left: 13px
+        padding-top: 0
+        margin-top: -17px
+        @media screen and (max-width: 1670px)
+          margin-top: 0
+          margin-left: -24px
+          padding: 65px 5px 0 26px
+        @media screen and (max-width: 1365px)
+          margin-top: 0
+          margin-left: -11px
+          margin-right: -24px
+          padding: 37px 0px 0 26px
+        @media screen and (max-width: 767px)
+          padding: 0
+          margin: 0
+        img
+          @media screen and (max-width: 767px)                 
+            width: 240px
+            margin: 0 auto
+            display: block
+//section countdown
+.countdown
+  &-section
+    background: #fff
+    padding: 100px 15px 95px
+    position: relative
+    @media screen and (max-width: 991px)
+      padding: 0 15px 72px
+      margin-top: 0
+    @media screen and (max-width: 767px)
+      padding: 0 15px 30px
+      margin-top: 31px
+    @media screen and (max-width: 370px)
+      padding: 0px 0px 22px    
+    .default-container
+      @media screen and (max-width: 767px)
+        padding: 0
+  &-container
+    max-width: 1365px
+    @media screen and (max-width: 767px)
+      padding: 0 
+  &__title
+    color: $text3
+    font-family: "Proxima Nova", sans-serif
+    font-weight: bold
+    // font-weight: 600
+    font-size: 40px
+    line-height: 49px
+    margin-bottom: 45px
+    text-align: center
+    letter-spacing: 2px
+    text-transform: uppercase
+
+    @media screen and (max-width: 991px)
+      font-size: 30px
+      line-height: 37px
+      margin-bottom: 35px
+      margin-top: 63px
+    @media screen and (max-width: 767px)
+      font-size: 14px
+      line-height: 17px
+      letter-spacing: 0.05em
+      margin-top: 0
+      margin-bottom: 15px
+  canvas
+    background: #FFF6F5
+    border: 1px solid #FFF6F5
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+.ClassyCountdown
+  &-wrapper
+    text-align: center
+    > div
+      width: 213px !important
+      margin: 15px 60px
+      @media screen and (max-width: 1400px)
+        margin: 15px 35px
+      @media screen and (max-width: 1199px)
+        width: 150px !important
+      @media screen and (max-width: 991px)
+        width: 137px !important
+        margin: 20px
+      @media screen and (max-width: 767px)
+        width: 61px !important
+        height: 61px !important
+        margin: 0 9px
+    .ClassyCountdown                  
+      &-value
+        line-height: 1
+        top: calc(50% + 25px)
+        @media screen and (max-width: 991px)
+          top: calc(50% + 5px) !important
+        @media screen and (max-width: 767px)
+          top: 47% !important
+        div
+          font-size: 50px !important
+          line-height: 50px
+          color: $colormain
+          font-family: 'Prata'
+          text-align: center
+          @media screen and (max-width: 1199px)
+            font-size: 50px !important
+          @media screen and (max-width: 991px)
+            font-size: 50px !important
+            line-height: 50px !important
+          @media screen and (max-width: 767px)
+            font-size: 20px !important
+            transform: translateY(17px)
+          @media screen and (max-width: 580px)
+            transform: translateY(14px)                  
+          span
+            position: relative
+            top: -30px
+            @media screen and (max-width: 767px)
+              top: 0
+        span
+          @media screen and (max-width: 991px)
+            margin-top: 2px
+            display: inline-block
+            font-size: 16px !important
+            line-height: 25px !important
+            vertical-align: top
+          @media screen and (max-width: 767px)
+            margin-top: 3px
+            font-size: 10px !important
+            line-height: 20px !important
+            transform: translateY(-10px)
+//section social 
+.social
+  &-top
+    background: $colormain
+    @media screen and (max-width: 767px)
+      padding: 8px 0 28px !important
+    .social__text
+      font-weight: bold
+      font-size: 40px
+      line-height: 56px
+      text-align: center
+      letter-spacing: 0.05em
+      text-transform: uppercase
+      color: #FFF
+      margin-top: 0px
+      @media screen and (max-width: 1670px)
+        max-width: 80%
+      @media screen and (max-width: 991px)
+        margin-top: 0
+        padding-top: 53px
+        max-width: 90%
+        font-size: 30px
+        line-height: 42px  
+      @media screen and (max-width: 767px)
+        padding: 32px 0 0
+        font-size: 14px
+        line-height: 20px 
+      br
+        @media screen and (max-width: 991px)
+          display: none
+  &-section
+    padding: 90px 15px 50px
+    position: relative
+    z-index: 0
+    @media screen and (max-width: 991px)
+      padding: 20px 15px 47px
+    @media screen and (max-width: 767px)
+      padding: 80px 15px 70px 
+    @media screen and (max-width: 450px)
+      padding: 36px 0 44px    
+    &.bottom
+      background: $colormain
+      padding-top: 1px
+      padding-bottom: 82px
+      @media screen and (max-width: 991px)
+        padding: 53px 15px
+      @media screen and (max-width: 767px)
+        padding: 45px 0 52px
+      .social__text
+        max-width: 100%
+        line-height: 60px
+        margin: 84px auto 0
+        @media screen and (max-width: 1670px)
+          max-width: 73%
+        @media screen and (max-width: 991px)
+          padding-top: 0
+          margin-top: 0
+          font-size: 30px
+          line-height: 50px
+          max-width: 83%
+        @media screen and (max-width: 767px)
+          max-width: 100%
+          padding: 0
+          font-size: 18px
+          line-height: 26px
+        br
+          @media screen and (max-width: 1350px)
+            display: none
+        .pink
+          color: #E886ED
+      .social__faded-text
+        padding-top: 39px
+        @media screen and (max-width: 991px)
+          padding-top: 30px
+        @media screen and (max-width: 767px)
+          padding-top: 25px
+      .social-list
+        margin: 77px auto
+        @media screen and (max-width: 991px)
+          margin: 57px auto 14px
+        @media screen and (max-width: 767px)
+          margin-bottom: 21px
+          margin-top: 33px
+      .social-p
+        font-family: "Proxima Nova", sans-serif
+        font-size: 25px
+        line-height: 60px
+        text-align: center
+        color: #fff
+        @media screen and (max-width: 991px)
+          font-size: 18px
+          line-height: 40px
+        @media screen and (max-width: 767px)
+          font-size: 14px
+          line-height: 20px
+    .default-container
+      @media screen and (max-width: 767px)
+        padding-left: 0
+        padding-right: 0
+  &__text
+    color: #fff
+    font-family: "Proxima Nova", sans-serif
+    font-weight: bold
+    font-size: 40px
+    line-height: 70px
+    text-align: center
+    max-width: 100%
+    margin: 124px auto 0
+    text-transform: none
+    @media screen and (max-width: 1199px)
+      font-size: 35px
+      line-height: 45px
+    @media screen and (max-width: 991px)
+      font-size: 28px
+      line-height: 40px
+      max-width: 70%
+    @media screen and (max-width: 767px)
+      font-size: 18px
+      line-height: 26px
+      max-width: 100%
+      padding: 0
+
+    span
+      color: #fff 
+  &__faded-text
+    color: #fff
+    font-family: "Proxima Nova", sans-serif
+    font-size: 30px
+    line-height: 60px
+    text-align: center
+    padding-top: 10px
+    @media screen and (max-width: 991px)
+      font-size: 20px
+      line-height: 60px
+      padding-top: 7px
+    @media screen and (max-width: 767px)
+      font-size: 14px
+      line-height: 20px
+      margin-top: 0
+      padding-top: 18px
+  &-list
+    display: flex
+    justify-content: space-between
+    align-items: center
+    max-width: 750px
+    margin: 42px auto
+    position: relative
+    z-index: 2
+    @media screen and (max-width: 991px)
+      margin: 17px auto
+      justify-content: center
+    @media screen and (max-width: 767px)
+      max-width: 300px
+      justify-content: center
+      margin: 18px auto 11px
+      padding: 0
+      -webkit-box-pack: justify
+      -ms-flex-pack: justify
+      justify-content: center
+    &__item
+      border: 1px solid #fff
+      border-radius: 50%
+      cursor: pointer
+      width: 93px
+      height: 93px
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: all 0.3s ease-in-out
+      @media screen and (max-width: 991px)
+        width: 73px
+        height: 73px
+        margin: 0 15px
+      @media screen and (max-width: 767px)
+        width: 35px
+        height: 35px
+        margin: 0 7px
+        text-align: center
+      @media screen and (max-width: 550px)      
+        margin: 0 5px
+      a
+        display: flex
+        align-items: center
+        justify-content: center
+      svg
+        stroke: #fff
+        @media screen and (max-width: 767px)
+          max-width: 50%
+      path
+        fill: #fff
+      &:hover
+        background: #fff
+        svg
+          stroke: $colormain
+        path
+          fill: $colormain
+
+.registr
+  padding: 148px 0 0 0
+  background: #FAFAFA
+  background-position: top center
+  background-size: 100% auto
+  @media screen and (max-width: 1200px)
+    padding: 90px 0 80px 0
+  @media screen and (max-width: 991px)
+    padding: 90px 0 53px 0
+  @media screen and (max-width: 767px)
+    padding: 24px 0 40px 0
+  &-container
+    max-width: 1330px
+    padding: 0 20px
+    margin: 0 auto
+    @media screen and (max-width: 1200px)
+      max-width: 777px
+    @media screen and (max-width: 767px)
+      max-width: 500px
+  &-title
+      text-align: center
+      font-weight: bold
+      font-size: 40px
+      line-height: 50px
+      letter-spacing: 0.04em
+      text-transform: uppercase
+      margin-bottom: 80px
+      @media screen and (max-width: 991px)
+        margin-bottom: 61px
+        font-size: 30px
+        line-height: 50px
+        max-width: 75%
+        margin: 0 auto 61px
+      @media screen and (max-width: 767px)
+          letter-spacing: 0
+          font-size: 20px
+          line-height: 26px
+          margin-bottom: 40px
+  &-row
+    display: flex
+    justify-content: space-between
+    margin-bottom: 57px
+    @media screen and (max-width: 991px)
+      margin-bottom: 51px
+    @media screen and (max-width: 767px)
+      flex-direction: column
+      margin-bottom: 0px
+  &-item
+    flex-basis: 33.33%
+    min-width: 33.33%
+    text-align: center
+    padding: 0 30px
+    @media screen and (max-width: 991px)
+      padding: 0
+    @media screen and (max-width: 767px)
+      margin-bottom: 33px
+    &_img
+      text-align: center
+      width: 245px
+      height: 245px
+      box-shadow: inset 0px 0px 0 2px $colormain
+      border-radius: 50%
+      background-color: #fff
+      border: 5px solid #FFf
+      display: flex
+      align-items: center
+      justify-content: center
+      margin: 0 auto
+      margin-bottom: 37px
+      @media screen and (max-width: 1200px)
+        width: 172px
+        height: 172px
+        margin-bottom: 36px
+      @media screen and (max-width: 991px)
+        width: 165px
+        height: 165px
+        margin-bottom: 19px
+      @media screen and (max-width: 767px)
+        width: 135px
+        height: 135px
+        margin-bottom: 8px
+    img
+      @media screen and (max-width: 991px)
+        height: 42px
+      @media screen and (max-width: 767px)
+        height: 30px
+    &_title
+      font-weight: bold
+      font-size: 24px
+      text-transform: uppercase
+      color: $colormain
+      margin-bottom: 12px
+      @media screen and (max-width: 1200px)
+        font-size: 18px
+        margin-bottom: 10px
+      @media screen and (max-width: 991px)
+        margin-bottom: 9px
+      @media screen and (max-width: 767px)
+        margin-bottom: -1px
+    &_subtitle
+      font-size: 18px
+      line-height: 33px
+      @media screen and (max-width: 1200px)
+        font-size: 15px
+      @media screen and (max-width: 991px)
+        font-size: 14px
+        line-height: 25px
+      @media screen and (max-width: 767px)
+        line-height: 21px
+        max-width: 240px
+        margin: 0 auto
+  &-section__btn
+    .default-btn
+      width: 340px
+      @media screen and (max-width: 991px)
+        width: 280px
+        height: 60px
+      @media screen and (max-width: 767px)
+        margin-top: 7px 
+//section company
+.company
+  display: flex
+  flex-wrap: wrap
+  @media screen and (max-width: 767px)
+    flex-wrap: wrap-reverse
+  &-section
+    position: relative
+    z-index: 0
+    padding-top: 95px
+    padding-bottom: 95px
+    overflow: hidden
+    background: #FAFAFA
+    background-size: 100% 80%
+    padding-bottom: 150px
+    @media screen and (max-width: 1365px)
+      padding-top: 0px
+    &::before
+      content: ''
+      width: 100%
+      height: 95px
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 0
+      background: #fff
+      height: 150px
+      @media only screen and (max-width: 1790px)
+        height: 190px
+      // @media only screen and (max-width: 1551px)
+      //   height: 150px
+      @media only screen and (max-width: 767px)
+        display: none
+
+    @media only screen and (max-width: 1790px)
+      padding-bottom: 190px 
+    @media screen and (max-width: 991px)
+      overflow: hidden
+      padding-bottom: 190px
+      margin-bottom: -190px 
+    @media screen and (max-width: 767px)
+      padding-top: 41px    
+    .default-container
+      position: static
+      @media only screen and (min-width: 1380px)
+        width: 1360px
+        max-width: 1360px
+      @media only screen and (max-width: 1365px)
+        width: 100%
+        max-width: 1248px
+      @media only screen and (max-width: 1199px)
+        max-width: 930px
+      @media only screen and (max-width: 991px)
+        width: 100%
+        max-width: 730px
+      @media only screen and (max-width: 767px)
+        padding: 0
+  &-left
+    flex: 0 0 55%
+    max-width: 55%
+    padding-top: 72px
+    padding-left: 10px
+    @media screen and (max-width: 1365px)
+      padding-top: 189px
+    @media screen and (max-width: 991px)
+      padding-left: 15px
+      padding-right: 15px
+      padding-top: 0
+      padding-bottom: 25px
+    @media screen and (max-width: 767px)
+      flex: 0 0 100%
+      max-width: 100%
+      padding-bottom: 0
+      padding-left: 24px
+      padding-right: 20px
+    &__title
+      font-family: "Proxima Nova", sans-serif
+      font-weight: bold
+      font-size: 60px
+      line-height: 60px
+      letter-spacing: 2.5px
+      text-transform: uppercase
+      color: $text1
+      @media screen and (max-width: 1365px)
+        line-height: 70px
+      // @media screen and (max-width: 1100px)
+      //   font-size: 76px
+      @media screen and (max-width: 991px)
+        font-size: 40px
+        line-height: 50px
+        padding-top: 13px
+      @media screen and (max-width: 767px)
+        display: none
+      br
+        display: none
+        @media screen and (max-width: 1199px)
+          display: none
+        @media screen and (max-width: 991px)
+          display: block              
+    &__text
+      font-family: "Proxima Nova", sans-serif
+      font-style: normal
+      font-weight: 400
+      font-size: 16px
+      line-height: 28px
+      color: $text1
+      max-width: 400px
+      @media only screen and (max-width: 991px)
+        font-size: 14px
+        line-height: 25px
+        padding-right: 10px
+      @media screen and (max-width: 767px)
+        padding-right: 0
+        max-width: 100%
+        font-size: 14px
+        line-height: 25px      
+      p
+        font-style: italic
+        line-height: 28px
+        margin-top: 17px
+        max-width: 380px
+        @media only screen and (max-width: 991px)
+          margin-top: 15px
+          font-size: 14px
+          line-height: 25px
+          padding-bottom: 26px  
+        @media screen and (max-width: 767px)
+          margin-top: 13px
+          font-size: 14px
+          line-height: 24px 
+  &-right
+    flex: 0 0 45%
+    max-width: 45%
+    position: relative
+    // @media only screen and (max-width: 1790px)
+    //   position: relative
+    @media screen and (max-width: 767px)
+      flex: 0 0 100%
+      max-width: 100%    
+    &__girl1
+      position: absolute
+      right: -566px
+      max-width: 875px
+      top: 157px
+      @media only screen and (max-width: 1365px)
+        display: none
+      // @media only screen and (max-width: 1550px)
+      //   max-width: 787px
+      // @media only screen and (max-width: 1350px)
+      //   max-width: 700px
+      // @media only screen and (max-width: 1199px)
+      //   max-width: 610px
+      // @media only screen and (max-width: 991px)
+      //   left: 0
+      //   max-width: 550px
+      // @media only screen and (max-width: 767px)
+      //   position: static
+      //   margin-left: auto
+    &__girl2
+      position: absolute
+      right: 60px
+      max-width: 721px
+      top: 157px
+      @media only screen and (max-width: 1365px)
+        right: -132px
+        top: 136px
+        max-width: 723px
+      @media only screen and (max-width: 1199px)
+        right: -240px
+      @media only screen and (max-width: 991px)
+        top: 0
+        right: -188px
+        max-width: 500px
+    &__girl_mobile
+      display: none
+      width: 280px
+      margin: 42px 0 77px
+      position: relative
+      left: 50%
+      transform: translateX(-50%)    
+      @media only screen and (max-width: 767px)
+        display: block
+        top: 0
+    &__girl2
+      @media only screen and (max-width: 767px)
+        display: none
+
+    &__title-mobile
+      color: $colormain
+      font-family: "Proxima Nova", sans-serif
+      font-weight: bold
+      font-size: 24px
+      line-height: 29px
+      text-align: center
+      display: none
+      @media only screen and (max-width: 767px)
+        display: block
+        font-family: "Proxima Nova", sans-serif
+        font-weight: bold
+        font-size: 20px
+        line-height: 24px
+        text-align: center
+        text-transform: uppercase
+        color: $text1
+  &-image
+    margin-top: 123px
+    width: 100%
+    @media only screen and (max-width: 1199px)
+      margin-top: 25px
+    @media only screen and (max-width: 991px)
+      height: 177px
+      object-fit: cover
+    @media only screen and (max-width: 767px)
+      display: none
+
+    &-mob
+      display: none
+      @media only screen and (max-width: 991px)
+        height: 224px
+        margin-left: -20px
+        margin-right: -20px
+        object-fit: cover
+        position: absolute
+        bottom: 0
+        z-index: -1   
+      @media only screen and (max-width: 767px)
+        display: block
+        margin-left: -208px
+
+.acquainted
+  color: #B72133
+  font-family: Open Sans, sans-serif
+  font-style: normal
+  font-weight: 600
+  font-size: 16px
+  display: inline-block
+  line-height: 33px
+  margin-top: 29px
+  margin-bottom: 27px
+  text-transform: uppercase
+  @media only screen and (max-width: 1365px)
+    margin-top: 20px
+    margin-bottom: 43px
+  @media only screen and (max-width: 991px)
+    margin-top: 15px
+    margin-bottom: 10px
+  @media screen and (max-width: 580px)
+    margin: 31px 0 7px
+  &:hover
+    // color: #B72133
+    // opacity: 0.6
+
+//section progress
+.motion
+  display: flex
+  flex-wrap: nowrap
+  @media screen and (max-width: 991px)
+    flex-wrap: wrap
+  &-section
+    position: relative
+    z-index: 1
+    margin-top: -90px
+    padding: 15px 15px
+    padding-bottom: 104px
+    // @media screen and (max-width: 1550px)
+    //   padding: 100px 15px
+    //   margin-top: -45px     
+    @media screen and (max-width: 991px)
+      margin-top: 0
+      padding: 68px 15px 87px
+    @media screen and (max-width: 767px)
+      padding: 25px 0 60px
+      background: #FAFAFA
+  &-container
+    @media only screen and (min-width: 1365px)
+      width: 100%
+      max-width: 1550px
+    @media screen and (max-width: 991px)
+      padding: 0 75px
+    @media only screen and (max-width: 767px)
+      padding: 0 15px 0 25px
+  &-fl
+    flex-direction: column
+    flex: 0 0 50%
+    max-width: 50%
+    @media screen and (max-width: 991px)
+      flex: 0 0 100%
+      max-width: 100%
+  &-fr
+    flex-direction: column
+    flex: 0 0 50%
+    max-width: 50%
+    @media screen and (max-width: 991px)
+      flex: 0 0 100%
+      max-width: 100%
+    .motion-item
+      padding-left: 5px
+      @media screen and (max-width: 991px)        
+        padding-left: 15px
+      @media screen and (max-width: 767px)
+        padding-left: 0        
+  &-item
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    flex-wrap: nowrap
+    margin-bottom: 25px
+    padding: 0 15px 0 110px
+    @media only screen and (max-width: 1424px)
+      padding: 0 15px 0 15px
+    @media screen and (max-width: 991px)
+      flex: 0 0 100%
+      max-width: 100%
+      margin-bottom: 25px
+    @media screen and (max-width: 767px)
+      padding: 0
+      margin-bottom: 32px
+
+    &:nth-child(5),
+    &:nth-child(6)
+      margin-bottom: 0
+
+    &:nth-child(5)
+      @media screen and (max-width: 991px)
+        margin-bottom: 30px
+
+    br
+      @media screen and (max-width: 991px)
+        display: none
+      @media screen and (max-width: 767px)
+        display: block        
+    &__num
+      color: $text1
+      font-family: "Proxima Nova", sans-serif
+      font-size: 40px
+      line-height: 49px
+      -webkit-box-flex: 0
+      -ms-flex: 0 0 23px
+      flex: 0 0 23px
+      max-width: 23px
+      text-align: center
+      @media screen and (max-width: 991px)
+        display: none
+      @media screen and (max-width: 767px)
+        font-size: 30px
+        line-height: 37px
+      &__mob
+        color: $text1
+        font-family: "Proxima Nova", sans-serif
+        font-size: 40px
+        line-height: 49px
+        -webkit-box-flex: 0
+        -ms-flex: 0 0 23px
+        flex: 0 0 23px
+        max-width: 23px
+        text-align: center
+        display: none
+        @media screen and (max-width: 991px)
+          display: block
+        @media screen and (max-width: 767px)
+          font-size: 30px
+          line-height: 37px                    
+    &__line
+      background-color: #000
+      height: 1px
+      width: 100.5px
+      opacity: 0.5
+      margin: 0 15px
+      flex: 0 0 auto
+      @media screen and (max-width: 1199px)
+        width: 60px
+      @media screen and (max-width: 991px)
+        width: 100.5px
+      @media screen and (max-width: 767px)
+        width: 20px
+    &__text
+      color: $text1
+      font-family: "Proxima Nova", sans-serif
+      font-size: 24px
+      line-height: 1
+      @media screen and (max-width: 767px)
+        font-size: 20px
+        line-height: 24px
+      span
+        color: $colormain
+        font-family: "Proxima Nova", sans-serif
+        font-weight: bold
+      br
+        display: none
+        @media screen and (max-width: 390px)
+          display: block      
+
+
+.items 
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  &__inner
+    position: relative
+    width: 100%
+    max-width: 800px
+    height: 800px
+    background: #fff
+  
+  &__layer &__item 
+    position: absolute
+    box-shadow: 0 32px 40px -20px rgba(0,0,0,.25)
+    &:after 
+      content: attr(data-title)
+      position: absolute
+      line-height: 20px
+      font-size: 10px
+      text-transform: uppercase
+      letter-spacing: 2px
+      transition: all .5s ease
+      visibility: hidden
+      opacity: 0
+    
+    &:hover 
+      &:after 
+        visibility: visible
+        opacity: 1
+      
+    
+  
+  &__layer:nth-child(1) &__item 
+    $color: #2E385C
+    top: 200px
+    left: 120px
+    width: 340px
+    height: 340px
+    background: $color
+    &:after 
+      top: -23px
+      left: 0
+      color: $color
+    
+  
+  &__layer:nth-child(2) &__item 
+    $color: #5A5050
+    top: 440px
+    left: 400px
+    width: 240px
+    height: 200px
+    background: $color
+    &:after 
+      bottom: -23px
+      right: 0
+      color: $color
+    
+  
+  &__layer:nth-child(3) &__item 
+    $color: #366C6F
+    top: 400px
+    left: 160px
+    width: 300px
+    height: 300px
+    background: $color
+    &:after 
+      bottom: -23px
+      left: 0
+      color: $color
+    
+  
+  &__layer:nth-child(4) &__item 
+    $color: #E9EDEA
+    top: 100px
+    left: 400px
+    width: 350px
+    height: 480px
+    background: $color
+    &:after 
+      top: -23px
+      right: 0
+      color: darken($color, 9%)
+    
+  
+  &__layer:nth-child(5) &__item 
+    $color: #DBBEB9
+    top: 300px
+    left: 300px
+    width: 200px
+    height: 200px
+    background: $color
+    &:after 
+      top: 0
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 20px
+      line-height: 20px
+      margin: auto
+      text-align: center
+      color: darken($color, 12%)
