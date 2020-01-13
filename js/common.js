@@ -11,7 +11,7 @@ $(document).ready(function () {
     // until: liftoffTime,
     padZeroes: true,
 
-    end: (new Date('2020-01-20T23:59:59')).getTime(),
+    end: (new Date('2020-02-10T23:59:59')).getTime(),
     now: $.now(),
     labels: true,
 

@@ -180,10 +180,10 @@ html
   .wrap-parallax
     position: absolute
     z-index: 4
-    top: 0
+    top: 25px
     left: 43.3%
     @media screen and (max-width: 1365px)
-      top: 25px
+      top: 45px
       left: 42.3%
     @media screen and (max-width: 991px)
       display: none
@@ -1630,30 +1630,36 @@ html
     &.bottom
       background: $colormain
       padding-top: 1px
-      padding-bottom: 82px
+      padding-bottom: 96px
       @media screen and (max-width: 991px)
-        padding: 53px 15px
+        padding: 53px 15px 117px
       @media screen and (max-width: 767px)
-        padding: 45px 0 52px
+        padding: 45px 0 90px
       .social__text
-        max-width: 100%
-        line-height: 60px
-        margin: 84px auto 0
+        font-weight: bold
+        font-size: 40px
+        line-height: 56px
+        text-align: center
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        color: #FFF
+        margin-top: 0px
         @media screen and (max-width: 1670px)
-          max-width: 73%
+          max-width: 80%
         @media screen and (max-width: 991px)
-          padding-top: 0
           margin-top: 0
+          padding-top: 53px
+          max-width: 90%
           font-size: 30px
-          line-height: 50px
-          max-width: 83%
+          line-height: 42px  
         @media screen and (max-width: 767px)
-          max-width: 100%
-          padding: 0
-          font-size: 18px
-          line-height: 26px
+          padding: 38px 0 0
+          font-size: 15px
+          line-height: 24px
+        @media screen and (max-width: 550px)
+          max-width: 100% 
         br
-          @media screen and (max-width: 1350px)
+          @media screen and (max-width: 991px)
             display: none
         .pink
           color: #E886ED
@@ -1664,12 +1670,12 @@ html
         @media screen and (max-width: 767px)
           padding-top: 25px
       .social-list
-        margin: 77px auto
+        margin: 77px auto 25px
         @media screen and (max-width: 991px)
           margin: 57px auto 14px
         @media screen and (max-width: 767px)
+          margin-top: 51px
           margin-bottom: 21px
-          margin-top: 33px
       .social-p
         font-family: "Proxima Nova", sans-serif
         font-size: 25px
@@ -1682,6 +1688,10 @@ html
         @media screen and (max-width: 767px)
           font-size: 14px
           line-height: 20px
+      .compare-social
+        padding-top: 100px
+        @media screen and (max-width: 767px)
+          padding-top: 0
     .default-container
       @media screen and (max-width: 767px)
         padding-left: 0
@@ -1710,7 +1720,7 @@ html
       padding: 0
 
     span
-      color: #fff 
+      color: #E886ED
   &__faded-text
     color: #fff
     font-family: "Proxima Nova", sans-serif
@@ -1777,6 +1787,7 @@ html
         stroke: #fff
         @media screen and (max-width: 767px)
           max-width: 50%
+          max-height: 50%
       path
         fill: #fff
       &:hover

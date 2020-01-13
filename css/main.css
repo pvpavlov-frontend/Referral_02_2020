@@ -378,13 +378,13 @@ html {
 .main .wrap-parallax {
   position: absolute;
   z-index: 4;
-  top: 0;
+  top: 25px;
   left: 43.3%;
 }
 
 @media screen and (max-width: 1365px) {
   .main .wrap-parallax {
-    top: 25px;
+    top: 45px;
     left: 42.3%;
   }
 }
@@ -2953,53 +2953,63 @@ html {
 .social-section.bottom {
   background: #736074;
   padding-top: 1px;
-  padding-bottom: 82px;
+  padding-bottom: 96px;
 }
 
 @media screen and (max-width: 991px) {
   .social-section.bottom {
-    padding: 53px 15px;
+    padding: 53px 15px 117px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .social-section.bottom {
-    padding: 45px 0 52px;
+    padding: 45px 0 90px;
   }
 }
 
 .social-section.bottom .social__text {
-  max-width: 100%;
-  line-height: 60px;
-  margin: 84px auto 0;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 56px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFF;
+  margin-top: 0px;
 }
 
 @media screen and (max-width: 1670px) {
   .social-section.bottom .social__text {
-    max-width: 73%;
+    max-width: 80%;
   }
 }
 
 @media screen and (max-width: 991px) {
   .social-section.bottom .social__text {
-    padding-top: 0;
     margin-top: 0;
+    padding-top: 53px;
+    max-width: 90%;
     font-size: 30px;
-    line-height: 50px;
-    max-width: 83%;
+    line-height: 42px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .social-section.bottom .social__text {
-    max-width: 100%;
-    padding: 0;
-    font-size: 18px;
-    line-height: 26px;
+    padding: 38px 0 0;
+    font-size: 15px;
+    line-height: 24px;
   }
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 550px) {
+  .social-section.bottom .social__text {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 991px) {
   .social-section.bottom .social__text br {
     display: none;
   }
@@ -3026,7 +3036,7 @@ html {
 }
 
 .social-section.bottom .social-list {
-  margin: 77px auto;
+  margin: 77px auto 25px;
 }
 
 @media screen and (max-width: 991px) {
@@ -3037,8 +3047,8 @@ html {
 
 @media screen and (max-width: 767px) {
   .social-section.bottom .social-list {
+    margin-top: 51px;
     margin-bottom: 21px;
-    margin-top: 33px;
   }
 }
 
@@ -3061,6 +3071,16 @@ html {
   .social-section.bottom .social-p {
     font-size: 14px;
     line-height: 20px;
+  }
+}
+
+.social-section.bottom .compare-social {
+  padding-top: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .social-section.bottom .compare-social {
+    padding-top: 0;
   }
 }
 
@@ -3108,7 +3128,7 @@ html {
 }
 
 .social__text span {
-  color: #fff;
+  color: #E886ED;
 }
 
 .social__faded-text {
@@ -3237,6 +3257,7 @@ html {
 @media screen and (max-width: 767px) {
   .social-list__item svg {
     max-width: 50%;
+    max-height: 50%;
   }
 }
 
